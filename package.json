@@ -1,5 +1,5 @@
 {
-  "name": "serialize",
+  "name": "@yuuko/serialize",
   "version": "1.0.0",
   "description": "object serialize",
   "main": "serialize.js",
