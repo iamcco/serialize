@@ -1,17 +1,17 @@
 ### install
 
 ```
-npm install --save serializer-js
+npm install --save serialize
 
 // or
 
-yarn add serializer-js
+yarn add serialize
 ```
 
 ### usage
 
 ```javascript
-import serialize from 'serializer-js';
+import serialize from 'serialize';
 
 serialize({
     key1: 'value1',
