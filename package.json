@@ -1,0 +1,28 @@
+{
+  "name": "serialize",
+  "version": "1.0.0",
+  "description": "object serialize",
+  "main": "serialize.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamcco/serialize.git"
+  },
+  "keywords": [
+    "serialize"
+  ],
+  "author": "年糕小豆汤 <ooiss@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamcco/serialize/issues"
+  },
+  "homepage": "https://github.com/iamcco/serialize#readme",
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "regenerator-runtime": "^0.11.1"
+  }
+}
