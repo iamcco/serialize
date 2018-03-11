@@ -1,11 +1,11 @@
 ### install
 
 ```
-npm install --save @yuuko/serialize
+npm install --save serialize-tool
 
 // or
 
-yarn add @yuuko/serialize
+yarn add serialize-tool
 ```
 
 ### usage
