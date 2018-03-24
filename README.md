@@ -11,7 +11,7 @@ yarn add serialize-tool
 ### usage
 
 ```javascript
-import serialize from 'serialize';
+import serialize from 'serialize-tool';
 
 serialize({
     key1: 'value1',
