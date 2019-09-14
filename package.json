@@ -1,6 +1,6 @@
 {
   "name": "serialize-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "object serialize",
   "main": "serialize.js",
   "scripts": {
@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/iamcco/serialize#readme",
   "devDependencies": {
-    "jest": "^22.4.2",
-    "babel-jest": "^22.4.1",
-    "babel-preset-env": "^1.6.1",
-    "regenerator-runtime": "^0.11.1"
+    "babel-jest": "^24.9.0",
+    "@babel/preset-env": "^7.6.0",
+    "jest": "^24.9.0",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "dependencies": {
   }
 }
