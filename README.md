@@ -22,7 +22,7 @@ serialize({
 serialize({
     key1: 'value1',
     key2: 'value2'
-}, 'keyOut')
+}, {key: 'keyOut'})
 // => keyOut.key1=value1&keyOut.key2=value2
 
 serialize({
@@ -37,7 +37,13 @@ serialize({
 serialize({
     key1: 'value1',
     key2: [1, 2],
-})
+}, {withBracket: true})
 // => key1=value1&key2[0]=1&key2[1]=2
+
+serialize({
+    key1: 'value1',
+    key2: [1, 2],
+})
+// => key1=value1&key2=1&key2=2
 
 ```

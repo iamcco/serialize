@@ -3,17 +3,17 @@
  */
 
 // types map
-const TYPES = [{}, [], 0, '', null, undefined, false].reduce((pre, next) => {
+const TYPES = [{}, [], 0, "", null, undefined, false].reduce((pre, next) => {
   const key = Object.prototype.toString.call(next);
-  const type = key.split(' ')[1].slice(0, -1).toLowerCase();
+  const type = key.split(" ")[1].slice(0, -1).toLowerCase();
   return {
     ...pre,
-    [key]: type
+    [key]: type,
   };
 }, {});
 
 // get type: ['object', 'array', 'string', 'number', 'boolean', 'null', 'undefined']
-const theTypeOf = param => TYPES[Object.prototype.toString.call(param)];
+const theTypeOf = (param) => TYPES[Object.prototype.toString.call(param)];
 
 /**
  * object serialize example:
@@ -41,22 +41,35 @@ const theTypeOf = param => TYPES[Object.prototype.toString.call(param)];
  * })   => key1=value1&key2[0]=1&key2[1]=2
  *
  * serialize(value, key) => key=value
-*/
-const serialize = (param, key) => {
+ */
+const serialize = (param, c) => {
   const query = [];
+  const conf = c || {};
   switch (theTypeOf(param)) {
-    case 'object':
+    case "object":
       Object.keys(param).forEach((item) => {
-        query.push(serialize(param[item], `${key ? `${key}.` : ''}${item}`));
+        query.push(
+          serialize(param[item], {
+            key: `${conf.key ? `${conf.key}.` : ""}${item}`,
+            withBracket: conf.withBracket,
+          })
+        );
       });
       break;
-    case 'array':
-      query.push(param.map((item, idx) => `${key || item}[${idx}]=${item}`).join('&'));
+    case "array":
+      query.push(
+        param
+          .map(
+            (item, idx) =>
+              `${conf.key || item}${conf.withBracket ? `[${idx}]` : ""}=${item}`
+          )
+          .join("&")
+      );
       break;
     default:
-      query.push(`${key || param}=${param}`);
+      query.push(`${conf.key || param}=${param}`);
   }
-  return query.join('&');
+  return query.join("&");
 };
 
 export default serialize;
